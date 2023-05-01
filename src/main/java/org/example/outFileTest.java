@@ -12,7 +12,6 @@ public class outFileTest {
     static String outputTotalValue = "";
     static String positionQuantityValue = "";
     static String outPutFileISIN = "";
-    static String positionFileFileISIN = "";
     static String InstrumentFileFileISIN = "";
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -72,8 +71,8 @@ public class outFileTest {
 
     }
 
-    private static boolean comparePositionWithIns(String positionInstrumentIDValue, Map<String, List<String>> instrumentMap) throws FileNotFoundException {
-        System.out.println("Checking " + positionInstrumentIDValue + " present on " + instrumentMap.keySet() + "ins file");
+    private static boolean comparePositionWithIns(String positionInstrumentIDValue, Map<String, List<String>> instrumentMap)  {
+        System.out.println("Checking " + positionInstrumentIDValue + " present on " + instrumentMap.keySet() + " instrument file");
         if (instrumentMap.containsKey(positionInstrumentIDValue)) {
             List<String> values = instrumentMap.get(positionInstrumentIDValue);
             System.out.println("Values from ins table to be compared " + values);
@@ -85,7 +84,7 @@ public class outFileTest {
                 System.out.println("Incorrect Calculation...!");
                 System.out.println("Instrument: Unit Price: " + Integer.parseInt(unitePrice));
                 System.out.println("Position:  Quantity value: " + Integer.parseInt(positionQuantityValue));
-                System.out.println("Output file: Total price: " + Integer.parseInt(outputTotalValue) + "which is wrong!\n\r");
+                System.out.println("Output file: Total price: " + Integer.parseInt(outputTotalValue) + " which is wrong!\n\r");
             }
         }
         return false;
